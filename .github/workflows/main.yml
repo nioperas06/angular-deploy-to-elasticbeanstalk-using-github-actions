@@ -51,13 +51,13 @@ jobs:
         flags: 'g'
 
     - name: Beanstalk Deploy for app
-      uses: einaregilsson/beanstalk-deploy@v3
+      uses: einaregilsson/beanstalk-deploy@v11
       with:
         aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
         aws_secret_key: ${{secrets.AWS_SECRET_KEY}}
-        application_name: <app-name>
-        environment_name: <beanstalk-env-name>
-        region: <aws_region>
+        application_name: appname
+        environment_name: beanstalk-env-name
+        region: aws_region
         version_label: "my-app-${{ steps.format-time.outputs.replaced }}"
         deployment_package: deploy.zip
 
